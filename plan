@@ -1,0 +1,19 @@
+usermodel
+full name - string
+email - string
+password - string
+cart - array of ids
+Isadmin - bool
+orders - array
+contact - number
+picture - db
+
+
+product
+image
+name
+price
+discount
+bgclt
+panelclr
+textclr
