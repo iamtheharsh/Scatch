@@ -17,3 +17,10 @@ discount
 bgclt
 panelclr
 textclr
+
+
+/ -> signup or login 
+/shop -> shop
+/admin -> admin panelclr
+/owner/products -> show all products
+/owner/admin -> show admin panel to create products
