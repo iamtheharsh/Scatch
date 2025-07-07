@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scatch</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="font-['helvetica_now_display'] bg-gray-50">
+    <nav class="w-full fixed top-0 left-0 bg-white shadow-sm z-50 px-5 py-3">
+      <div class="flex justify-between items-center max-w-7xl mx-auto">
+        <h3 class="text-2xl font-bold text-gray-900">Scatch</h3>
+        
+        <% var loggedin = typeof loggedin !== "undefined" ? loggedin : true; %> 
+        <% if(loggedin) { %>
+        <div class="flex gap-8 items-center text-gray-700">
+          <a class="text-lg hover:text-gray-900 transition-colors" href="/shop">Shop</a>
+          <a class="text-lg hover:text-gray-900 transition-colors" href="/cart">Cart</a>
+          <a class="text-lg hover:text-gray-900 transition-colors" href="/owners/admin">My Account</a>
+          <form
+            id="logout-form"
+            action="/users/logout"
+            method="POST"
+            class="inline"
+          >
+            <button
+              type="submit"
+              class="text-red-500 text-lg bg-transparent border-none cursor-pointer hover:text-red-700 transition-colors"
+            >
+              Logout
+            </button>
+          </form>
+        </div>
+        <% } %>
+      </div>
+    </nav>
+    
+    <!-- Add top margin to account for fixed header -->
+    <div class="pt-16"></div>

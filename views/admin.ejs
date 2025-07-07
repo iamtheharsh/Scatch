@@ -1,0 +1,51 @@
+<%- include('./partials/header') %>
+
+<div class="w-full min-h-screen bg-gray-50 flex px-20 py-10">
+  <!-- Sidebar -->
+  <div class="w-1/4 pr-8">
+    <div class="bg-white rounded-lg p-6 shadow-sm">
+      <h2 class="text-lg font-medium text-gray-900 mb-6">Admin Panel</h2>
+      <div class="space-y-3">
+        <a class="block text-gray-700 hover:text-gray-900 transition-colors font-medium" href="/owners/admin">All Products</a>
+        <a class="block text-gray-700 hover:text-gray-900 transition-colors" href="/products/create">Create New Product</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="w-3/4">
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-3xl font-light text-gray-900">Products</h1>
+        <p class="text-gray-600 mt-2">Manage your product catalog</p>
+      </div>
+      <a href="#" class="text-red-500 hover:text-red-700 transition-colors">Delete All</a>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <% cards.forEach(card => { %>
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+        <div class="aspect-square bg-gray-100">
+          <img
+            class="w-full h-full object-cover"
+            src="<%= card.image %>"
+            alt="<%= card.title %>"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="font-medium text-gray-900 mb-2"><%= card.title %></h3>
+          <p class="text-sm text-gray-600 mb-3"><%= card.description %></p>
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-900">₹1200</span>
+            <button class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <i class="ri-add-line text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
