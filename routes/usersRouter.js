@@ -4,7 +4,7 @@ const {
   registerUser,
   loginUser,
   logout,
-} = require("../contollers/authController");
+} = require("../controllers/authController"); 
 
 router.get("/", function (req, res) {
   res.send("hey from users router");
