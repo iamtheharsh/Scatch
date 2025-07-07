@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+
+<div class="container mx-auto mt-10 px-4">
+  <h2 class="text-2xl font-bold mb-6">Order History</h2>
+  <% if (orders.length === 0) { %>
+    <p>No orders yet.</p>
+  <% } else { %>
+    <div class="grid gap-4">
+      <% orders.forEach(order => { %>
+        <div class="bg-white shadow p-4 rounded">
+          <h4 class="text-lg font-medium">Order placed on <%= order.date %></h4>
+          <ul class="list-disc pl-5">
+            <% order.items.forEach(item => { %>
+              <li><%= item.name %> - ₹<%= item.price %> x <%= item.quantity %></li>
+            <% }) %>
+          </ul>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>
+
+<%- include("partials/footer") %>
